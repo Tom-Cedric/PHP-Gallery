@@ -5,7 +5,6 @@
  * Date: 30.03.2019
  * Time: 11:37
  */
-
 ?>
 <html>
 <head>
@@ -75,8 +74,26 @@
                                                            data-target="#image-gallery">
                                                             <img class="img-thumbnail"
                                                                  src="<?php echo $pfad . '/' . $file; ?>/<?php echo $i_index; ?>.jpg"
-                                                                 alt="Bild <?php echo $i_index; ?>">
+                                                                 id="img<?php echo $i_index; ?>"
+                                                                 alt="Bild <?php echo $i_index; ?>" onclick="openModal(<?php echo $i_index; ?>);">
                                                         </a>
+                                                    </div>
+
+                                                    <div class="modal fade" id="Modal<?php echo $i_index; ?>" role="dialog">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-body">
+                                                                    <img class="img-thumbnail"
+                                                                         src="<?php echo $pfad . '/' . $file; ?>/<?php echo $i_index; ?>.jpg"
+                                                                         id="img<?php echo $i_index; ?>"
+                                                                         alt="Bild <?php echo $i_index; ?>">
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
                                                     </div>
                                                     <?php
                                                 }
